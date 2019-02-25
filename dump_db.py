@@ -115,12 +115,6 @@ if __name__ == "__main__":
 
     fetchData(sql, cursor, 'sequences')
 
-    sql = """SELECT version_num
-             FROM db_versions
-             WHERE version_id = (SELECT MAX(version_id) FROM db_versions) """
-
-    fetchData(sql, cursor, 'version')
-
     dumpToFile(dump_file)
 
     print("Creating dump file for database DONE")
